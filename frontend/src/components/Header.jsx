@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from '../assets/logo.png';
+import logo from '../assets/red-rose.png';
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand>
               <img src={logo} alt="logo" />
-              E-commerce App
+              Red Rose
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
