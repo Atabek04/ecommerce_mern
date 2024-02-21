@@ -38,13 +38,13 @@ const ProductScreen = () => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger'>
+        <Message variant="danger">
           {error?.data?.message || error.error}
         </Message>
       ) : (
@@ -54,7 +54,7 @@ const ProductScreen = () => {
               <Image src={product.image} alt={product.name} fluid />
             </Col>
             <Col md={3}>
-              <ListGroup variant='flush'>
+              <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
                 </ListGroup.Item>
@@ -72,7 +72,7 @@ const ProductScreen = () => {
             </Col>
             <Col md={3}>
               <Card>
-                <ListGroup variant='flush'>
+                <ListGroup variant="flush">
                   <ListGroup.Item>
                     <Row>
                       <Col>Price:</Col>
@@ -97,9 +97,9 @@ const ProductScreen = () => {
                         <Col>Qty</Col>
                         <Col>
                           <Form.Control
-                            as='select'
+                            as="select"
                             value={qty}
-                            onChange={(e) => setQty(e.target.value)}
+                            onChange={(e) => setQty(Number(e.target.value))}
                           >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
@@ -116,8 +116,8 @@ const ProductScreen = () => {
 
                   <ListGroup.Item>
                     <Button
-                      className='btn-block'
-                      type='button'
+                      className="btn-block"
+                      type="button"
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
                     >
