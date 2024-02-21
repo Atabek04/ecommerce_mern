@@ -9,17 +9,16 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json(products);
 });
 
-// @desc    Fetch a product
+// @desc    Fetch single product
 // @route   GET /api/products/:id
 // @access  Public
-const getProductsById = asyncHandler(async (req, res) => {
+const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     return res.json(product);
-  } else {
-    res.status(404);
-    throw new Error('Resource not found');
   }
+  res.status(404);
+  throw new Error('Resource not found');
 });
 
-export { getProducts, getProductsById };
+export { getProducts, getProductById };
